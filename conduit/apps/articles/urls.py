@@ -3,7 +3,8 @@ from django.conf.urls import include, url
 from rest_framework.routers import DefaultRouter
 
 from .views import (
-    ArticleViewSet, ArticlesFavoriteAPIView, CommentsListCreateAPIView, CommentsDestroyAPIView
+    ArticleViewSet, ArticlesFavoriteAPIView, CommentsListCreateAPIView, CommentsDestroyAPIView,
+    TagListAPIView
 )
 
 router = DefaultRouter(trailing_slash=False)
@@ -16,4 +17,5 @@ urlpatterns = [
         CommentsListCreateAPIView.as_view()),
     url(r'^articles/(?P<article_slug>[-\w]+)/comments/(?P<comment_pk>[\d]+)/?$',
         CommentsDestroyAPIView.as_view()),
+    url(r'^tags/?$', TagListAPIView.as_view()),
 ]
