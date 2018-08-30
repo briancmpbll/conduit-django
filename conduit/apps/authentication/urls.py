@@ -1,9 +1,9 @@
 from django.conf.urls import url
 
-from .views import RegistrationAPIView, LoginAPIView, UserRetrievUpdateAPIView
+from .views import RegistrationAPIView, LoginAPIView, UserRetrieveUpdateAPIView
 
 urlpatterns = [
-    url(r'^user/?$', UserRetrievUpdateAPIView.as_view()),
+    url(r'^user/?$', UserRetrieveUpdateAPIView.as_view()),
     url(r'^users/?$', RegistrationAPIView.as_view()),
     url(r'^users/login/?$', LoginAPIView.as_view()),
 ]
