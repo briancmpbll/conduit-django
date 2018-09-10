@@ -8,7 +8,7 @@ from .views import (
 )
 
 router = DefaultRouter(trailing_slash=False)
-router.register(r'articles/?', ArticleViewSet)
+router.register(r'^articles/?', ArticleViewSet)
 
 urlpatterns = [
     url(r'^articles/feed/?$', ArticlesFeedAPIView.as_view()),
